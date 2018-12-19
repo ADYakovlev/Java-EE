@@ -9,7 +9,7 @@
   <version>1.0.0</version>
   <packaging>war</packaging>
 
-  <name>example Java EE Maven Webapp</name>
+  <name>Java EE Maven Webapp</name>
   <url>http://www.5-y.ru</url>
 
   <developers>
