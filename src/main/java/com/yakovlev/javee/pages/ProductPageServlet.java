@@ -15,11 +15,6 @@ import java.io.PrintWriter;
 public class ProductPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try(PrintWriter out = resp.getWriter()){
-            out.println(Teamplate.HEADER_BEFORE_TITLE+"Product"+Teamplate.HEADER_AFTER_TITLE);
-            out.println("<h1>- Product page -</h1>");
-            out.println(Teamplate.MENUE);
-            out.println(Teamplate.FOOTER);
-        }
+        req.getRequestDispatcher("product.html").forward(req,resp);
     }
 }

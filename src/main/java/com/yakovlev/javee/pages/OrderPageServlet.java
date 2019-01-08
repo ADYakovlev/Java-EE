@@ -15,11 +15,6 @@ import java.io.PrintWriter;
 public class OrderPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try(PrintWriter out = resp.getWriter()){
-            out.println(Teamplate.HEADER_BEFORE_TITLE+"Order"+Teamplate.HEADER_AFTER_TITLE);
-            out.println("<h1>- Order page -</h1>");
-            out.println(Teamplate.MENUE);
-            out.println(Teamplate.FOOTER);
-        }
+        req.getRequestDispatcher("order.html").forward(req,resp);
     }
 }
