@@ -15,12 +15,6 @@ import java.io.PrintWriter;
 public class CartPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try(PrintWriter out = resp.getWriter()){
-            out.println(Teamplate.HEADER_BEFORE_TITLE+"Cart"+Teamplate.HEADER_AFTER_TITLE);
-            out.println("<h1>- Cart page -</h1>");
-            out.println(Teamplate.MENUE);
-            out.println(Teamplate.FOOTER);
-        }
-
+        req.getRequestDispatcher("cart.html").forward(req,resp);
     }
 }
