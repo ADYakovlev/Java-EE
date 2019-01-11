@@ -11,6 +11,6 @@ import java.io.IOException;
 public class ErrorPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
-//
+        httpServletResponse.sendError(404);
     }
 }
