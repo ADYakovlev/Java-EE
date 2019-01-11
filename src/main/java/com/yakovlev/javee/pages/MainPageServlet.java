@@ -6,7 +6,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 /*
 @author Yakovlev
@@ -15,6 +18,10 @@ import java.io.PrintWriter;
 public class MainPageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("main.html").forward(req,resp);
+        req.setAttribute("test","this is test attribute");
+        req.setAttribute("date", new Date());
+        req.setAttribute("title", "Main page");
+        req.getRequestDispatcher("pages/main.jsp").forward(req,resp);
     }
+
 }
